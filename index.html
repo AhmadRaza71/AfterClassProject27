@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Number Sorter</title>
+</head>
+
+<body
+    style="font-family: 'Arial', sans-serif; text-align: center; background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%); margin: 0; padding: 20px; display: flex; justify-content: center; align-items: center; height: 100vh;">
+
+    <div
+        style="background-color: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); padding: 40px; border-radius: 20px; box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); border: 1px solid rgba(255, 255, 255, 0.18); max-width: 500px; width: 100%;">
+
+        <p style="font-size: 24px; color: #333; font-weight: bold; margin-bottom: 20px;">Sort the Mapped Numbers
+        </p>
+
+        <p id="product_value"
+            style="font-size: 18px; color: #5D4037; font-weight: bold; background-color: #FFF; padding: 15px; border-radius: 10px; min-height: 27px;">
+        </p>
+
+        <button onclick="ascending()"
+            style="padding: 15px 30px; border: none; background-color: #84fab0; color: white; text-align: center; font-size: 16px; margin: 10px 5px; cursor: pointer; border-radius: 50px; transition: all 0.3s ease;"
+            onmouseover="this.style.backgroundColor='#00c292'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.2)';"
+            onmouseout="this.style.backgroundColor='#84fab0'; this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+            Ascending
+        </button>
+        <button onclick="descending()"
+            style="padding: 15px 30px; border: none; background-color: #f78ca0; color: white; text-align: center; font-size: 16px; margin: 10px 5px; cursor: pointer; border-radius: 50px; transition: all 0.3s ease;"
+            onmouseover="this.style.backgroundColor='#f5576c'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.2)';"
+            onmouseout="this.style.backgroundColor='#f78ca0'; this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+            Descending
+        </button>
+    </div>
+    <script>
+        var numbers = [45, 23, 68, 11, 92];
+        function myfunction(num) {
+            return num * 50;
+        }
+        var newarray = numbers.map(myfunction);
+        document.getElementById("product_value").innerHTML = "Mapped values: " + newarray.join(', ');
+        function ascending() {
+            newarray.sort(function (a, b) { return a - b; });
+            document.getElementById("product_value").innerHTML = "Ascending: " + newarray.join(', ');
+        }
+        function descending() {
+            newarray.sort(function (a, b) { return b - a; });
+            document.getElementById("product_value").innerHTML = "Descending: " + newarray.join(', ');
+        }
+    </script>
+</body>
+
+</html>
